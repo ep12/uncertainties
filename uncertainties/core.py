@@ -1723,6 +1723,9 @@ class AffineScalarFunc(object):
         # vector of that space):
         return self != 0.  # Uses the AffineScalarFunc.__ne__ function
 
+    if sys.version_info < (3, 0):
+        __nonzero__ = __bool__
+
     ########################################
 
     ## Logical operators: warning: the resulting value cannot always
